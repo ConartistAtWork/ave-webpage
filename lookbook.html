@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link href="/css/styles.css" rel="stylesheet">
+  <link href="/fontawesome/css/all.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avenue Website</title>
+</head>
+
+<body onresize="resize()">
+  <div class="filter">
+  </div>
+  <header>
+    <div class="header-mobile hidden">
+      <div class="hamburger" onclick="myFunction(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+      <div class="searchbox">
+        <input type="text" placeholder="Search..">
+        <i class="fas fa-search"></i>
+      </div>
+      <div class="cart">
+        <a href="">
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+      </div>
+    </div>
+    <div class="header-wide">
+      <div class="wrapper-nr">
+        <div class="flex">
+          <div class="item">
+            <form action="lookbook.html">
+              <label>Currency : </label>
+              <select id="currency" name="currency">
+                <option value="GBP">GBP</option>
+                <option value="USD">USD</option>
+                <option value="UAH">UAH</option>
+                <option value="RUB">RUB</option>
+              </select>
+              <i class="fas fa-chevron-down"></i>
+            </form>
+          </div>
+
+          <div class="item">
+            <div class="flex">
+              <div class="item">
+                <a href="register.html">Register</a>
+                <a href="lookbook.html">Sign In</a>
+              </div>
+
+              <div class="item">
+                <a href="">
+                  <i class="fas fa-shopping-cart"></i>
+                  empty
+                  <i class="fas fa-chevron-down"></i>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="welcome main">
+    <div class="topmenu" id="topMenu">
+      <div class="wrapper">
+        <a href="index.html" class="branding">
+          <img src="imgs/logo.png" alt="">
+        </a>
+        <div class="close" onclick="myFunction(this)">
+          <i class="fas fa-times"></i>
+        </div>
+        <div class="wrapper">
+
+          <nav>
+            <ul>
+              <li>
+                <a href="index.html" id="men" onclick="ddownFunction(this)">
+                  Men
+                  <i class="fas fa-chevron-down"></i>
+                  <i class="fas fa-chevron-right"></i>
+                </a>
+                <div class="dropdown-men hidden">
+                  <div class="return" onclick="ddownFunction()">
+                    <i class="fas fa-chevron-left"></i>
+                    <h1>Men</h1>
+                  </div>
+                  <div class="grid">
+                    <div class="item">
+                      <h1>Casuals</h1>
+                      <a href="productview.html">Jackets</a>
+                      <a href="index.html">Hoodie & Sweatshirts</a>
+                      <a href="index.html">Polo Shirts</a>
+                      <a href="index.html">Sportswear</a>
+                      <a href="index.html">Trousers & Chinos</a>
+                      <a href="index.html">T-shirts</a>
+                    </div>
+                    <div class="item">
+                      <h1>Formal</h1>
+                      <a href="index.html">Jackets</a>
+                      <a href="index.html">Shirts</a>
+                      <a href="index.html">Suits</a>
+                      <a href="index.html">Trousers</a>
+                    </div>
+                  </div>
+                  <div class="sale">
+                    <h1>Autumn Sale!</h1>
+                    <h1>Up to 50% off</h1>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <a href="">
+                  Women
+                  <i class="fas fa-chevron-down"></i>
+                  <i class="fas fa-chevron-right"></i>
+                </a>
+              </li>
+              <li>
+                <a href="brand.html">
+                  The Brand
+                </a>
+              </li>
+              <li>
+                <a href="localstores.html">
+                  Local Stores
+                </a>
+              </li>
+              <li>
+                <a href="lookbook.html" id="lookbook-tab" class="highlighted" onclick="ddownFunction2()">
+                  Look Book
+                  <i class="fas fa-chevron-down"></i>
+                  <i class="fas fa-chevron-right"></i>
+                </a>
+                <div class="dropdown-lb hidden">
+                  <div class="return">
+                    <i class="fas fa-chevron-left"></i>
+                    <h1>Look Book</h1>
+                  </div>
+                  <div class="grid">
+                    <div class="item">
+                      <h1>Our Lookbooks</h1>
+                      <a href="lookbook.html">Latest Posts (mixed)</a>
+                      <a href="lookbook.html">Men’s Lookbook</a>
+                      <a href="lookbook.html">Women’s Lookbook</a>
+                    </div>
+                    <div class="item">
+                      <h1>Your Lookbook</h1>
+                      <a href="lookbook.html">View and Edit</a>
+                      <a href="lookbook.html">Share</a>
+                      <a href="lookbook.html">Delete</a>
+                    </div>
+                  </div>
+                  <div class="sale">
+                    <h1>Autumn Sale!</h1>
+                    <h1>Up to 50% off</h1>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="searchbox">
+              <input type="text" placeholder="Search..">
+              <i class="fas fa-search"></i>
+            </div>
+          </nav>
+        </div>
+        <div class="wrapper">
+          <div class="extra-top">
+            <form action="lookbook.html">
+              <label>Currency : </label>
+              <div class="container">
+                <select name="currency">
+                  <option value="GBP">GBP</option>
+                  <option value="USD">USD</option>
+                  <option value="UAH">UAH</option>
+                  <option value="RUB">RUB</option>
+                </select>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+            </form>
+            <a href="register.html">Register</a>
+            <a href="">Sign-In</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="mobilemenu">
+      <a href="index.html" class="branding">
+        <img src="imgs/logo.png" alt="">
+      </a>
+      <div class="close" onclick="myFunction(this)">
+        <i class="fas fa-times"></i>
+      </div>
+      <div class="wrapper">
+    
+        <nav>
+          <ul>
+            <li>
+              <a id="men" href="#" onclick="ddownFunction(this)">
+                Men
+                <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-chevron-right"></i>
+              </a>
+              <div class="dropdown-men hidden">
+                <div class="return" onclick="ddownFunction()">
+                  <i class="fas fa-chevron-left"></i>
+                  <h1>Men</h1>
+                </div>
+                <div class="grid">
+                  <div class="item">
+                    <h1>Casuals</h1>
+                    <a href="productview.html">Jackets</a>
+                    <a href="index.html">Hoodie & Sweatshirts</a>
+                    <a href="index.html">Polo Shirts</a>
+                    <a href="index.html">Sportswear</a>
+                    <a href="index.html">Trousers & Chinos</a>
+                    <a href="index.html">T-shirts</a>
+                  </div>
+                  <div class="item">
+                    <h1>Formal</h1>
+                    <a href="index.html">Jackets</a>
+                    <a href="index.html">Shirts</a>
+                    <a href="index.html">Suits</a>
+                    <a href="index.html">Trousers</a>
+                  </div>
+                </div>
+                <div class="sale">
+                  <h1>Autumn Sale!</h1>
+                  <h1>Up to 50% off</h1>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="#">
+                Women
+                <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-chevron-right"></i>
+              </a>
+            </li>
+            <li>
+              <a href="brand.html">
+                The Brand
+              </a>
+            </li>
+            <li>
+              <a href="localstores.html">
+                Local Stores
+              </a>
+            </li>
+            <li>
+              <a href="#" onclick="ddownFunction2()">
+                Look Book
+                <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-chevron-right"></i>
+              </a>
+              <div class="dropdown-lb">
+                <div class="return" onclick="ddownFunction2()">
+                  <i class="fas fa-chevron-left"></i>
+                  <h1>Men</h1>
+                </div>
+                <div class="grid">
+                  <div class="item">
+                    <h1>Our Lookbooks</h1>
+                    <a href="lookbook.html">Latest Posts (mixed)</a>
+                    <a href="lookbook.html">Men’s Lookbook</a>
+                    <a href="lookbook.html">Women’s Lookbook</a>
+                  </div>
+                  <div class="item">
+                    <h1>Your Lookbook</h1>
+                    <a href="lookbook.html">View and Edit</a>
+                    <a href="lookbook.html">Share</a>
+                    <a href="lookbook.html">Delete</a>
+                  </div>
+                </div>
+                <div class="sale">
+                  <h1>Autumn Sale!</h1>
+                  <h1>Up to 50% off</h1>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div class="searchbox">
+            <input type="text" placeholder="Search..">
+            <i class="fas fa-search"></i>
+          </div>
+        </nav>
+      </div>
+      <div class="wrapper extrawrapper">
+        <div class="extra-top">
+          <form action="">
+            <label>Currency : </label>
+            <div class="container">
+              <select name="currency">
+                <option value="GBP">GBP</option>
+                <option value="USD">USD</option>
+                <option value="UAH">UAH</option>
+                <option value="RUB">RUB</option>
+              </select>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+          </form>
+          <a href="register.html">Register</a>
+          <a href="#">Sign-In</a>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="container">
+        <h1><span>Our</span> Lookbook</h1>
+        <h1>Latest Posts - men & women</h1>
+      </div>
+    </div>
+  </section>
+
+  <section class="showcase lb">
+    <div class="wrapper">
+      <ul>
+        <li><a href="">Latest</a></li>
+        <li><a href="">Most Liked</a></li>
+        <li><a href="">Best Sellers</a></li>
+        <li><a href="">Price Low to High</a></li>
+        <li><a href="">Price High to Low</a></li>
+      </ul>
+      <div class="grid">
+        <div class="item photo1">
+          <img src="imgs/clothes-1.png" alt="">
+          <p class="pricetag"><span>REF</span>M1</p>
+          <div class="photo-buttons">
+            <i class="fas fa-info"></i>
+            <i class="fas fa-heart"></i>
+          </div>
+        </div>
+        <div class="item photo2">
+          <img src="imgs/clothes-2.png" alt="">
+          <p class="pricetag"><span>REF</span>W1</p>
+          <div class="photo-buttons">
+            <i class="fas fa-info"></i>
+            <i class="fas fa-heart"></i>
+          </div>
+        </div>
+        <div class="item photo3">
+          <img class="mobile" src="imgs/clothes-3-mobile.png" alt="">
+          <p class="pricetag"><span>REF</span>MJI</p>
+          <div class="photo-buttons">
+            <i class="fas fa-info"></i>
+            <i class="fas fa-heart"></i>
+          </div>
+        </div>
+        <div class="lookbook-jane">
+          <img src="imgs/janes-lookbook.png" alt="">
+          <div class="container">
+            <h1><span>Jane's</span> Lookbook</h1>
+            <h1>get the look for under £200!</h1>
+            <p>We invited actress Jane Marshall to join us
+            for the day and choose her perfect outfit from
+            our vast range of womens fashion.</p>
+            <p>This is of course not true as this is just a design
+            for a website and this is simply filler text.</p>
+            <a class="button" href="lookbook.html">View Now</a>
+          </div>
+        </div>
+        <div class="item photo4">
+          <img class="mobile" src="imgs/clothes-4-mobile.png" alt="">
+          <p class="pricetag"><span>REF</span>M2</p>
+          <div class="photo-buttons">
+            <i class="fas fa-info"></i>
+            <i class="fas fa-heart"></i>
+          </div>
+        </div>
+        <div class="item photo5">
+          <img src="imgs/clothes-5.png" alt="">
+          <p class="pricetag"><span>REF</span>W2</p>
+          <div class="photo-buttons">
+            <i class="fas fa-info"></i>
+            <i class="fas fa-heart"></i>
+          </div>
+        </div>
+        <div class="item photo6">
+          <img src="imgs/clothes-6.png" alt="">
+          <p class="pricetag"><span>REF</span>W3</p>
+          <div class="photo-buttons">
+            <i class="fas fa-info"></i>
+            <i class="fas fa-heart"></i>
+          </div>
+        </div>
+        <div class="item photo7">
+          <img src="imgs/clothes-7.png" alt="">
+          <p class="pricetag"><span>REF</span>W4</p>
+          <div class="photo-buttons">
+            <i class="fas fa-info"></i>
+            <i class="fas fa-heart"></i>
+          </div>
+        </div>
+        <div class="lookbook-win">
+          <img src="imgs/win.png" alt="">
+          <img src="imgs/win-nr.png" alt="">
+          <div class="container">
+            <h1><span>Win</span> a new look!</h1>
+            <h1>add looks or items to your lookbook for a chance of winning</h1>
+            <p>See an item or a complete look you like, click the <i class="fas fa-heart"></i> button to add it to your
+            lookbook and you’ll be automatically entered to our monthly draw where
+            one winner gets a £300 gift voucher to spend on our website!</p>
+            <p>Terms: No purchase necessary. Vouchers are non-transferable and no
+            cash alternative is ofered. Competition is for members only.</p>
+            <a class="button" href="">Shop Now</a>
+          </div>
+          <img src="imgs/win-new-look.png" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lookbooks">
+    <div class="grid">
+      <div class="item lookbook-m">
+        <img src="/imgs/mens-lookbook.png" alt="">
+        <div class="container">
+          <h1><span>Men's</span> Lookbook</h1>
+          <p>Lorem ipsum dolor sit amet eras facilisis
+            consectetur adipiscing elit lor, integer lorem consecteur dignissim laciniqui.
+            Elementum metus facilisis ut phasellu.</p>
+          <a class="button" href="lookbook.html">View Now</a>
+        </div>
+      </div>
+      <div class="item lookbook-w">
+        <img src="/imgs/womens-lookbook.png" alt="">
+        <div class="container">
+          <h1><span>Women's</span> Lookbook</h1>
+          <p>Lorem ipsum dolor sit amet eras facilisis
+            consectetur adipiscing elit lor, integer lorem consecteur dignissim laciniqui.
+            Elementum metus facilisis ut phasellu.</p>
+          <a class="button" href="lookbook.html">View Now</a>
+        </div>
+      </div>
+      <div class="item lookbook-y">
+        <img src="/imgs/your-lookbook.png" alt="">
+        <div class="container">
+          <h1><span>Your</span> Lookbook</h1>
+          <p>See an item you like and click the <span><i class="fas fa-heart"></i></span> button to add it to your lookbook where you
+            can create your own perfect look.
+            It’s like your own boutique!</p>
+          <a class="button" href="lookbook.html">View Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer>
+    <div class="wrapper-nr">
+      <div class="grid">
+        <div class="item">
+          <h1>Information</h1>
+          <a href="">The brand</a>
+          <a href="">Local stores</a>
+          <a href="">Customer service</a>
+          <a href="">Privacy & cookies</a>
+          <a href="">Site map</a>
+        </div>
+        <div class="item">
+          <h1>Why buy from us</h1>
+          <a href="">Shipping & returns</a>
+          <a href="">Secure shopping</a>
+          <a href="">Testimonials</a>
+          <a href="">Award winning</a>
+          <a href="">Ethical trading</a>
+        </div>
+        <div class="item">
+          <h1>Your account</h1>
+          <a href="">Sign in</a>
+          <a href="register.html">Register</a>
+          <a href="">View cart</a>
+          <a href="">View your lookbook</a>
+          <a href="">Track an order</a>
+          <a href="">Update information</a>
+        </div>
+        <div class="item">
+          <h1>Lookbook</h1>
+          <a href="">Latest posts</a>
+          <a href="">Men’s lookbook</a>
+          <a href="">Women’s lookbook</a>
+          <a href="">Lookbooks RSS feed</a>
+          <a href="">View your lookbook</a>
+          <a href="">Delete your lookbook</a>
+        </div>
+        <div class="item">
+          <h1>Contact Details</h1>
+          <p>Head Office: Avenue Fashion,
+            180-182 Regent Street, London.</p>
+          <p>Telephone: 0123-456-789</p>
+          <p>Email: support@yourwebsite.com</p>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="item">
+          <div class="container">
+            <h1>AWARD WINNER</h1>
+            <h1>fashion awards 2016</h1>
+          </div>
+        </div>
+        <div class="item links">
+          <div class="container">
+            <a class="social" href=""><i class="fab fa-facebook-f"></i></a>
+            <a class="social" href=""><i class="fab fa-twitter"></i></a>
+            <a class="social" href=""><i class="fab fa-instagram"></i></a>
+            <a class="social" href=""><i class="fab fa-pinterest"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="wrapper-nr">
+        <div class="flex">
+          <div class="item">
+            <p>© 2016 Avenue Fashion™</p>
+          </div>
+          <div class="item">
+            <p>Design by RobbyDesigns.com</p>
+            <p>Dev by Loremipsum.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </footer>
+  <script>
+      var x = $(".mobilemenu");
+      var kek = $(".thegrid .grid .item > ul li")
+      var ddown_men = $(".welcome .mobilemenu .dropdown-men")
+      var kek2 = $('.welcome nav li:first-child')
+      var ddown_lb = $(".welcome .mobilemenu .dropdown-lb")
+
+        $(".filter").on('click', function () {
+          $(".mobilemenu").toggleClass("show")
+          $(".dropdown-men").removeClass("show")
+          $(".dropdown-lb").removeClass("show")
+          $(".filter").removeClass("show")
+          document.body.classList.remove('lock-scroll');
+        })
+
+        $(".welcome .mobilemenu #men").on('click', function (e) {
+          e.preventDefault();
+        });
+
+        $(".welcome .mobilemenu #lb").on('click', function (e) {
+          e.preventDefault();
+        })
+
+      if ($(window).width() < 1065) {
+        $(".dropdown-men").toggleClass("hidden")
+        //$(".welcome .topmenu i.fa-chevron-right").removeClass("hidden")
+        x.className += " mobile"
+      }
+      else {
+        x.className = "topmenu"
+      }
+
+      if ($(window).width() < 1048) {
+        $(".dropdown-men").attr("class", "dropdown-men")
+      }
+      else {
+        $(".dropdown-men").attr("class", "dropdown-men hidden")
+      }
+
+
+    function resize() {
+      if ($(window).width() < 1048
+      && x.className !== "mobilemenu show") {
+      x.className = "mobilemenu"
+      $(".dropdown-men").attr("class", "dropdown-men")
+    }
+      else if (x.className === "mobilemenu show") {
+        return none
+      }
+      else {
+        x.className = "topmenu"
+        $(".dropdown-men").attr("class", "dropdown-men hidden")
+      }
+    }
+
+      function myFunction() {
+        x.toggleClass('show')
+        $(".filter").toggleClass('show')
+        document.body.classList.toggle('lock-scroll');
+      }
+      
+    function myFunction2() {
+      if (window.innerWidth > 1027) {
+        x.className = "topmenu";
+        console.log('KATKA')
+      }
+    }
+
+    function myFunction3() {
+      if (kek.className === "") {
+        kek.className += " active";
+      } else {
+        kek.className = "";
+      }
+    }
+
+    function myFunction4() {
+      kek3.toggleClass("hidden")
+    }
+
+    function ddownFunction() {
+      ddown_men.toggleClass("show")
+    }
+
+    function ddownFunction2() {
+      ddown_lb.toggleClass("show")
+    }
+
+
+
+    $(function () {
+      kek.click(function () {
+        kek.removeClass("active")
+        $("p", kek).slideUp(300)
+        $(this).toggleClass("active");
+        $("p", this).slideDown(300)
+      });
+    })
+  </script>
+</body>
+
+</html>
