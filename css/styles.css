@@ -215,7 +215,7 @@ ul {
   margin-bottom: 50px; }
 
 .welcome.main {
-  background-image: url(/imgs/darken.png), url(/imgs/ave-2.png), url(/imgs/city.png);
+  background-image: url(../imgs/darken.png), url(../imgs/ave-2.png), url(../imgs/city.png);
   background-size: 1920px 700px, 1800px, 1920px;
   background-repeat: no-repeat;
   background-position-x: center;
@@ -1067,7 +1067,7 @@ footer .grid:last-child {
 .branchdetails .wrapper > .flex .item.map {
   width: 67%;
   height: 500px;
-  background: url(/imgs/map.png);
+  background: url(../imgs/map.png);
   background-position: center;
   background-size: 1300px;
   background-repeat: no-repeat; }
