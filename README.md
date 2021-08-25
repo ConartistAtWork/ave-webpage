@@ -1,4 +1,4 @@
-# Ave Webpage
+# Ave Website
 
 An e-commerce website made using HTML, CSS and Javascript.
 
